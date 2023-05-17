@@ -1,0 +1,19 @@
+jobs:
+  calculate_imphash:
+    runs-on: ubuntu-latest  # Replace with the desired runner environment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.6  # Replace with the desired Python version
+
+      - name: Install pefile
+        run: pip install pefile
+
+      - name: Calculate ImpHash
+        run: |
+          python calculate_imphash.py
