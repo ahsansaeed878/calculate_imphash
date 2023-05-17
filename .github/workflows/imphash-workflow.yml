@@ -24,3 +24,8 @@ jobs:
       - name: Calculate ImpHash
         run: |
           python calculate_imphash.py
+      - name: Upload imphash.txt
+        uses: actions/upload-artifact@v2
+        with:
+          name: imphash-results
+          path: imphash.txt
