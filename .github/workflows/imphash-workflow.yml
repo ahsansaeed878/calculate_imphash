@@ -1,3 +1,10 @@
+name: Calculate ImpHash
+
+on:
+  push:
+    branches:
+      - main  # Replace with the branch name where you want to trigger the workflow
+
 jobs:
   calculate_imphash:
     runs-on: ubuntu-latest  # Replace with the desired runner environment
