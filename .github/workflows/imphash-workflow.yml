@@ -27,7 +27,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "ahsan saeed"
+          git config --global user.name "ahsansaeed878"
           git config --global user.email "ahsansaeed878@gmail.com"
       
       - name: Commit changes
@@ -38,4 +38,4 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.imphash  }}
+          github_token: ${{ secrets.GITHUB_TOKEN  }}
