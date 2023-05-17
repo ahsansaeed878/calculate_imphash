@@ -24,8 +24,18 @@ jobs:
       - name: Calculate ImpHash
         run: |
           python calculate_imphash.py
-      - name: Upload imphash.txt
-        uses: actions/upload-artifact@v2
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "ahsan saeed"
+          git config --global user.email "ahsansaeed878@gmail.com"
+      
+      - name: Commit changes
+        run: |
+          git add imphash.txt
+          git commit -m "Update imphash.txt"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          name: imphash-results
-          path: imphash.txt
+          github_token: ${{ secrets.imphash }}
